@@ -1,0 +1,37 @@
+CUSTOMIZATION OF LINUX KERNEL
+
+Aim:
+
+To download the vanilla Linux kernel from repository and customize to our requirements.
+
+Customization Steps:
+
+1. Download the vanilla kernel from www.kernel.org
+2. Switch to root user using the command
+[root@localhost os]#su
+3. Use dnf to install kernel-devel package
+[root@localhost os]#dnf install kernel-devel
+4. Install gcc development tools
+[root@localhost os]#dnf group install "Development Tools"
+5. Install additional software packages
+[root@localhost os]#dnf install ncurses-devel bison flex
+elfutils-libelf-devel openssl-devel
+6. Copy the downloaded kernel source to /usr/src/kernels
+[root@localhost os]#cp linux-5.0.0.tar.xz /usr/src/kernels
+7. Go to kernel source directory
+[root@localhost os]#cd /usr/src/kernels
+8. Extract the downloaded vanilla kernel
+[root@localhost os]#unxz linux-5.0.2.tar.xz
+[root@localhost os]#tar xvf linux-5.0.2.tar
+9. Remove all old configuration files
+[root@localhost os]#make mrproper
+10.Configure the Kernel
+[root@localhost os]#make menuconfig
+11.Build the Kernel(For faster build use –j 2 option)
+[root@localhost os]#make all
+12.Remove all temporary files
+[root@localhost os]#make clean
+13.Install Kernel and its modules
+[root@localhost os]#make modules_install
+[root@localhost os]#make install
+14.Reboot the system
