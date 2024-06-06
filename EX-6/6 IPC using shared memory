@@ -1,1 +1,13 @@
+SYSTEM CALL TRACING
 
+Aim:
+
+To write a C program and trace system calls used and print the same in ascending order using
+shell script.
+
+Algorithm:
+
+1. Create a C program with an output statement helloworld.
+2. Compile and trace system calls while executing the executable file.
+3.The output of the system calls trace is put in hellotrace file.
+4.Shellscript to read the contents of hellotrace file and print only system call name as output.
