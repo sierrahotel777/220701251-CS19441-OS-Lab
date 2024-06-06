@@ -1,1 +1,49 @@
+EMPLOYEE AVERAGE PAY
 
+AIM:
+
+To find out the average pay of all employees whose salary is more than 6000 and no. of
+days worked is more than 4.
+
+Algorithm:
+
+1. Create a flat file emp.dat for employees with their name, salary per day and number of days
+worked and save it.
+2. Create an awk script emp.awk
+3. For each employee record do
+a. If Salary is greater than 6000 and number of days worked is more than 4then print name and
+salary earned
+b. Compute total pay of employee
+4. Print the total number of employees satisfying the criteria and their average pay.
+
+PROGRAM:
+
+/emp.awk
+BEGIN{print “EMPLOYEES DETAILS”}
+{#salary should be greater than 6000 and days more than 4
+if($2>6000 && $3>4)
+{
+print $1,”\t\t”, $2*$3
+pay=pay+ $2*$3
+count=count+1
+}
+}
+END{
+{#action part
+print “no of employees are=”NR/count+1
+print “total pay=”,pay
+print “average pay=”,pay/count
+}
+}
+
+//emp.dat – Col1 is name, Col2 is Salary Per Day and Col3 is //no. of days worked
+SAN 8000 5
+ROB 6000 5
+TIM 5000 6
+MIKE 7000 7
+AMY 6500 6
+
+Output:
+[student@localhost ~]$ vi emp.dat
+[student@localhost ~]$ vi emp.awk
+[student@localhost ~]$ gawk -f emp.awk emp.dat.
