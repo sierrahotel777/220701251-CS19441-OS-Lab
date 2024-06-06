@@ -1,1 +1,25 @@
+RESULTS OF EXAMINATION
 
+To print the pass/fail status of a student in a class.
+Algorithm:
+1. Read the data from file
+2. Get a data from each column
+3. Compare the all subject marks column
+a. If marks less than 45 then print Fail
+b. else print Pass
+PROGRAM:
+#INCLUDE<STDIO.H>
+main()
+{
+    int s1,s2,s3;
+    printf("Enter marks of sub1,sub2,sub3");
+    scanf("%d%d%d",&s1,&s2,&s3);
+    if(s1>40 && s2>40 && s3>40)
+    {
+        printf("Pass");
+    }
+    else
+    {
+        printf("Fail");
+    }
+}
